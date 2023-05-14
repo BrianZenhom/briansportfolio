@@ -8,11 +8,11 @@
 │   └── favicon.svg
 ├── src/
 │   ├── components/
-│   │   └── Card.astro
+│   │   └── Card
 │   ├── layouts/
-│   │   └── Layout.astro
+│   │   └── Layout
 │   └── pages/
-│       └── index.astro
+│       └── index
 └── package.json
 ```
 
