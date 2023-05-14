@@ -5,10 +5,15 @@
 ```
 /
 ├── public/
-│   └── favicon.svg
+│   ├── Favicon.svg
+│   └── me4.webp
 ├── src/
 │   ├── components/
-│   │   └── Card
+│   │   ├── IconCV
+│   │   ├── IconDownload
+│   │   ├── IconGit
+│   │   ├── IconTw
+│   │   └── LogoBz
 │   ├── layouts/
 │   │   └── Layout
 │   └── pages/
