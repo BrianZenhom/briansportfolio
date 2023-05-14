@@ -1,81 +1,46 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
-</Layout>
+<Layout title="Brians Portfolio">
+  <main>
+    <header
+      class="py-3 px-24 flex items-center fixed top-0 w-full justify-between"
+    >
+      <div class="flex flex-grow basis-0">
+        <svg
+          id="Layer_1"
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 894.59 984.69"
+          class="h-6"
+        >
+          <path
+            class="cls-1"
+            d="m.78,0v203.65h523.62l-10.94,12.56-25.41,29.16L9.03,795.25l-9.03,10.37.03,13.75.27,128.79.08,36.53h654.81c83.85,0,134.37-60.27,134.37-134.35v-276.52c0-72.38-55.22-131.26-127.6-131.26h-79.08l130.64-149.97,24.64-28.28,52.84-60.65h0V0H.78Zm592.08,633.77v148.76h-306.13l129.59-148.76h176.54Z"
+            fill="currentColor"></path>
+        </svg>
+      </div>
+      <nav>
+        <ul
+          class="flex text-sm [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
+        >
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
 
-<style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>
+      <nav class="flex flex-grow justify-end basis-0">
+        <ul
+          class="flex text-sm [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
+        >
+          <li><a href="#">github</a></li>
+          <li><a href="#">linkedin</a></li>
+          <li><a href="#">twitter</a></li>
+        </ul>
+      </nav>
+    </header>
+  </main>
+</Layout>
