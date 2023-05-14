@@ -1,29 +1,23 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import TwitterLogo from "../components/IconTw.astro";
+import IconGit from "../components/IconGit.astro";
+import LogoBz from "../components/LogoBz.astro";
+import IconDownload from "../components/IconDownload.astro";
+import IconCV from "../components/IconCV.astro";
 ---
 
 <Layout title="Brians Portfolio">
   <main>
     <header
-      class="py-3 px-24 flex items-center fixed top-0 w-full justify-between"
+      class="bg-black py-2 px-24 flex items-center fixed top-0 w-full justify-between z-40 text-white"
     >
       <div class="flex flex-grow basis-0">
-        <svg
-          id="Layer_1"
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 894.59 984.69"
-          class="h-6"
-        >
-          <path
-            class="cls-1"
-            d="m.78,0v203.65h523.62l-10.94,12.56-25.41,29.16L9.03,795.25l-9.03,10.37.03,13.75.27,128.79.08,36.53h654.81c83.85,0,134.37-60.27,134.37-134.35v-276.52c0-72.38-55.22-131.26-127.6-131.26h-79.08l130.64-149.97,24.64-28.28,52.84-60.65h0V0H.78Zm592.08,633.77v148.76h-306.13l129.59-148.76h176.54Z"
-            fill="currentColor"></path>
-        </svg>
+        <LogoBz />
       </div>
       <nav>
         <ul
-          class="flex text-sm [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
+          class="flex text-sm [&>li>a]:text-white [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
         >
           <li><a href="#">Projects</a></li>
           <li><a href="#">About</a></li>
@@ -32,14 +26,81 @@ import Layout from "../layouts/Layout.astro";
         </ul>
       </nav>
 
-      <nav class="flex flex-grow justify-end basis-0">
+      <nav class="flex flex-grow justify-end basis-0 w">
         <ul
-          class="flex text-sm [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
+          class="flex text-sm [&>li>a]:text-white [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
         >
-          <li><a href="#">github</a></li>
-          <li><a href="#">linkedin</a></li>
+          <li>
+            <a href="#"><TwitterLogo /></a>
+          </li>
+          <li><a href="#"><IconGit /></a></li>
         </ul>
       </nav>
     </header>
+    <div class="noise"></div>
+    <section class="bg-black h-screen w-screen relative overflow-hidden pt-20">
+      <article
+        class="w-full flex flex-col pb-5 justify-center items-center md:flex-row mt-14"
+      >
+        <div class="w-1/2 flex justify-end">
+          <div>
+            <h1 class="text-white pt-40 text-5xl font-medium py-10">
+              Brian Zenhom <br /><b
+                class="bg-gradient-to-r from-sky-500 to-indigo-500 text-transparent bg-clip-text"
+              >
+                FullStack</b
+              > Developer
+            </h1>
+            <h2 class="text-white pt-18 text-2xl">
+              <b>9+</b> years Graphic Designing.<br /><b>2+</b> years Web Developing.
+            </h2>
+            <p class="text-white text-base py-10">
+              Building my version of user-friendly digital products & services.
+              <br />Committed to improving my skills through continuous learning
+            </p>
+            <div class="grid gap-8 items-start justify-end">
+              <div class="relative group">
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-300 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"
+                >
+                </div>
+                <button
+                  class="relative px-7 py-4 bg-black rounded-lg leading-none flex items-center divide-x divide-gray-600"
+                >
+                  <span class="flex items-center space-x-5">
+                    <IconCV />
+                    <span class="pr-6 text-gray-100 font-bold">Download CV</span
+                    >
+                  </span>
+                  <span
+                    class="pl-6 text-gray-100 group-hover:text-gray-100 transition duration-200"
+                    ><IconDownload /></span
+                  ></button
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="absolute top-0 bottom-0 h-full"></div>
+        </div>
+        <div
+          class="w-1/2 md:bg-transparent md:w-1/2 min-h-full flex-1 flex items-center justify-center"
+        >
+          <div class="relative flex justify-center animated show">
+            <img
+              height="600"
+              width="500"
+              class="object-cover mt-5 z-20 bg-clip-border rounded-3xl"
+              src="../public/me4.webp"
+              alt="Brian Zenhom good face"
+            />
+            <div
+              class="rounded-3xl bg-black w-full aspect-video z-0 absolute bottom-0"
+            >
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
   </main>
 </Layout>
