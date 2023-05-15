@@ -1,16 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import TwitterLogo from "../components/IconTw.astro";
+import LinkedLogo from "../components/IconLinked.astro";
 import IconGit from "../components/IconGit.astro";
 import LogoBz from "../components/LogoBz.astro";
 import IconDownload from "../components/IconDownload.astro";
 import IconCV from "../components/IconCV.astro";
 ---
 
-<Layout title="Brians Portfolio">
+<Layout title="Brian Zenhom">
   <main>
     <header
-      class="bg-black py-2 px-24 flex items-center fixed top-0 w-full justify-between z-40 text-white"
+      class="py-2 bg-neutral-950 px-24 flex items-center fixed top-0 w-full justify-between z-40 text-white"
     >
       <div class="flex flex-grow basis-0">
         <LogoBz />
@@ -31,34 +31,69 @@ import IconCV from "../components/IconCV.astro";
           class="flex text-sm [&>li>a]:text-white [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
         >
           <li>
-            <a href="#"><TwitterLogo /></a>
+            <a href="https://www.linkedin.com/in/brianzenhom/"><LinkedLogo /></a
+            >
           </li>
-          <li><a href="#"><IconGit /></a></li>
+          <li><a href="https://github.com/BrianZenhom"><IconGit /></a></li>
         </ul>
       </nav>
     </header>
     <div class="noise"></div>
-    <section class="bg-black h-screen w-screen relative overflow-hidden pt-20">
-      <article
-        class="w-full flex flex-col pb-5 justify-center items-center md:flex-row mt-14"
-      >
-        <div class="w-1/2 flex justify-end">
-          <div>
-            <h1 class="text-white pt-40 text-5xl font-medium py-10">
-              Brian Zenhom <br /><b
-                class="bg-gradient-to-r from-sky-500 to-indigo-500 text-transparent bg-clip-text"
+    <section
+      class="bg-neutral-950 h-screen w-screen relative overflow-hidden pt-20"
+    >
+      <div class="z-30 relative h-full flex flex-col">
+        <article class="grid grid-cols-2 pb-5 justify-center mt-14">
+          <div class="flex-1 flex items-center justify-end">
+            <div>
+              <h1 class="text-white pt-40 text-7xl font-extrabold">
+                Brian Zenhom
+              </h1>
+              <h1
+                class="text-white text-5xl font-normal pb-10 mt-0 tracking-wide"
               >
-                FullStack</b
-              > Developer
-            </h1>
-            <h2 class="text-white pt-18 text-2xl">
-              <b>9+</b> years Graphic Designing.<br /><b>2+</b> years Web Developing.
-            </h2>
-            <p class="text-white text-base py-10">
-              Building my version of user-friendly digital products & services.
-              <br />Committed to improving my skills through continuous learning
-            </p>
-            <div class="grid gap-8 items-start justify-end">
+                <b
+                  class="bg-gradient-to-r from-sky-500 to-indigo-500 text-transparent bg-clip-text font-black"
+                >
+                  FullStack</b
+                > Developer
+              </h1>
+              <h2 class="text-white pt-18 text-2xl">
+                <b>9+</b> years Graphic Designing.<br /><b>2+</b> years Web Developing.
+              </h2>
+              <p class="text-white text-base py-10">
+                Building my version of user-friendly digital products &
+                services.
+                <br />Committed to improving my skills through continuous
+                learning
+              </p>
+            </div>
+
+            <div class="absolute top-0 bottom-0 h-full"></div>
+          </div>
+          <div
+            class="md:bg-transparent min-h-full flex-1 flex items-center justify-center"
+          >
+            <div class="relative flex justify-center animated show">
+              <img
+                height="600"
+                width="500"
+                class="object-cover mt-5 z-20 bg-clip-border rounded-3xl"
+                src="../public/me4.webp"
+                alt="Brian Zenhom good face"
+              />
+              <div
+                class="rounded-3xl bg-gradient-to-r from-blue-600 to-blue-300 transition duration-1000 group-hover:duration-200 animate-tilt w-full aspect-video z-1 absolute bottom-0 blur"
+              >
+              </div>
+              <div
+                class="rounded-3xl bg-neutral-950 w-full aspect-video z-0 absolute bottom-0"
+              >
+              </div>
+            </div>
+          </div>
+          <footer class="z-30 mt-40 justify-center col-span-2">
+            <div class="grid gap-8 items-start justify-center">
               <div class="relative group">
                 <div
                   class="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-300 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"
@@ -79,28 +114,9 @@ import IconCV from "../components/IconCV.astro";
                 >
               </div>
             </div>
-          </div>
-
-          <div class="absolute top-0 bottom-0 h-full"></div>
-        </div>
-        <div
-          class="w-1/2 md:bg-transparent md:w-1/2 min-h-full flex-1 flex items-center justify-center"
-        >
-          <div class="relative flex justify-center animated show">
-            <img
-              height="600"
-              width="500"
-              class="object-cover mt-5 z-20 bg-clip-border rounded-3xl"
-              src="../public/me4.webp"
-              alt="Brian Zenhom good face"
-            />
-            <div
-              class="rounded-3xl bg-black w-full aspect-video z-0 absolute bottom-0"
-            >
-            </div>
-          </div>
-        </div>
-      </article>
+          </footer>
+        </article>
+      </div>
     </section>
   </main>
 </Layout>
