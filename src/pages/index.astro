@@ -1,50 +1,21 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import LinkedLogo from "../components/IconLinked.astro";
-import IconGit from "../components/IconGit.astro";
-import LogoBz from "../components/LogoBz.astro";
+import Header from "../components/Header.astro";
 import IconDownload from "../components/IconDownload.astro";
 import IconCV from "../components/IconCV.astro";
 ---
 
 <Layout title="Brian Zenhom">
-  <main>
-    <header
-      class="py-2 bg-neutral-950 px-24 flex items-center fixed top-0 w-full justify-between z-40 text-white"
-    >
-      <div class="flex flex-grow basis-0">
-        <LogoBz />
-      </div>
-      <nav>
-        <ul
-          class="flex text-sm [&>li>a]:text-white [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
-        >
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-
-      <nav class="flex flex-grow justify-end basis-0 w">
-        <ul
-          class="flex text-sm [&>li>a]:text-white [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
-        >
-          <li>
-            <a href="https://www.linkedin.com/in/brianzenhom/"><LinkedLogo /></a
-            >
-          </li>
-          <li><a href="https://github.com/BrianZenhom"><IconGit /></a></li>
-        </ul>
-      </nav>
-    </header>
+  <Header />
+  <main id="main" class="noise-container z-10 w-full flex flex-1 flex-col">
     <div class="noise"></div>
-    <section
-      class="bg-neutral-950 h-screen w-screen relative overflow-hidden pt-20"
-    >
-      <div class="z-30 relative h-full flex flex-col">
-        <article class="grid grid-cols-2 pb-5 justify-center mt-14">
-          <div class="flex-1 flex items-center justify-end">
+    <section class="h-full w-full relative overflow-hidden pt-20">
+      <div class="noise"></div>
+      <div class="hero z-30 items-center relative h-full flex flex-col">
+        <article
+          class="grid gap-x-20 grid-cols-2 pb-5 items-center justify-center mt-14"
+        >
+          <div class="flex items-center justify-end">
             <div>
               <h1 class="text-white pt-40 text-7xl font-extrabold">
                 Brian Zenhom
@@ -53,7 +24,7 @@ import IconCV from "../components/IconCV.astro";
                 class="text-white text-5xl font-normal pb-10 mt-0 tracking-wide"
               >
                 <b
-                  class="bg-gradient-to-r from-sky-500 to-indigo-500 text-transparent bg-clip-text font-black"
+                  class="bg-gradient-to-r from-mainColor to-blue-300 text-transparent bg-clip-text font-black"
                 >
                   FullStack</b
                 > Developer
@@ -62,24 +33,22 @@ import IconCV from "../components/IconCV.astro";
                 <b>9+</b> years Graphic Designing.<br /><b>2+</b> years Web Developing.
               </h2>
               <p class="text-white text-base py-10">
-                Building my version of user-friendly digital products &
-                services.
-                <br />Committed to improving my skills through continuous
-                learning
+                Building my version of the web.
+                <br />Improving my skills through continuous learning.
               </p>
             </div>
 
             <div class="absolute top-0 bottom-0 h-full"></div>
           </div>
           <div
-            class="md:bg-transparent min-h-full flex-1 flex items-center justify-center"
+            class="md:bg-transparent min-h-full flex items-center justify-center"
           >
             <div class="relative flex justify-center animated show">
               <img
                 height="600"
                 width="500"
                 class="object-cover mt-5 z-20 bg-clip-border rounded-3xl"
-                src="../public/me4.webp"
+                src="/me4.webp"
                 alt="Brian Zenhom good face"
               />
               <div
@@ -87,12 +56,12 @@ import IconCV from "../components/IconCV.astro";
               >
               </div>
               <div
-                class="rounded-3xl bg-neutral-950 w-full aspect-video z-0 absolute bottom-0"
+                class="rounded-3xl bg-bg-color w-full aspect-video z-0 absolute bottom-0"
               >
               </div>
             </div>
           </div>
-          <footer class="z-30 mt-40 justify-center col-span-2">
+          <footer class="z-30 pt-28 justify-center col-span-2">
             <div class="grid gap-8 items-start justify-center">
               <div class="relative group">
                 <div
@@ -100,7 +69,7 @@ import IconCV from "../components/IconCV.astro";
                 >
                 </div>
                 <button
-                  class="relative px-7 py-4 bg-black rounded-lg leading-none flex items-center divide-x divide-gray-600"
+                  class="relative px-7 py-4 bg-bg-color rounded-lg leading-none flex items-center divide-x divide-gray-600"
                 >
                   <span class="flex items-center space-x-5">
                     <IconCV />
@@ -117,6 +86,75 @@ import IconCV from "../components/IconCV.astro";
           </footer>
         </article>
       </div>
+      <div class="pt-5 mt-52">
+        <div class="container max-w-[1165px] h-screen mr-auto ml-auto">
+          <h1 class="text-white text-5xl text-left">Projects</h1>
+        </div>
+      </div>
     </section>
   </main>
+
+  <style>
+    .noise-container {
+      position: relative;
+      isolation: isolate;
+      background-color: #17191e;
+    }
+    main::before {
+      position: absolute;
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      background-repeat: repeat;
+      content: "";
+      background-size: 20px 20px;
+      background-image: linear-gradient(
+          to right,
+          rgb(35 38 45) 1px,
+          transparent 1px
+        ),
+        linear-gradient(to bottom, rgb(35 38 45) 1px, transparent 1px);
+      -webkit-mask-image: linear-gradient(to bottom, white, transparent);
+      mask-image: linear-gradient(to bottom, white, transparent);
+      z-index: -1;
+    }
+    .hero::before {
+      position: absolute;
+      content: "";
+      height: 50vw;
+      width: 100vw;
+      top: 50%;
+      translate: 0 -30%;
+      left: -60vw;
+      background: url(/noise.webp) repeat,
+        linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
+      background-blend-mode: overlay;
+      -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.4), transparent 65%);
+      mask-image: radial-gradient(rgba(0, 0, 0, 0.4), transparent 65%);
+      z-index: 0;
+    }
+    .hero::after {
+      position: absolute;
+      content: "";
+      height: 50vw;
+      width: 100vw;
+      top: 50%;
+      translate: 0 -30%;
+      right: -60vw;
+      background: url(/noise.webp) repeat,
+        linear-gradient(247.23deg, #4af2c8 0%, #2f4cb3 100%);
+      background-blend-mode: overlay;
+      -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.5), transparent 65%);
+      mask-image: radial-gradient(rgba(0, 0, 0, 0.5), transparent 65%);
+      z-index: 0;
+    }
+    .noise {
+      z-index: -20;
+      position: absolute;
+      inset: 0;
+      background-image: url(/noise.webp);
+      opacity: 0.4;
+      mix-blend-mode: overlay;
+      pointer-events: none;
+    }
+  </style>
 </Layout>
