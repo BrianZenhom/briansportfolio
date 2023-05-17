@@ -10,7 +10,7 @@ module.exports = {
         header: "5rem",
       },
       colors: {
-        "bg-color": "#0e1013",
+        "bg-color": "#17191e",
         mainColor: "#3245ff",
       },
       animation: {
