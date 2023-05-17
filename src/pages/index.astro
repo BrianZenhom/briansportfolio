@@ -10,9 +10,9 @@ import Projects from "../components/Projects.astro";
   <Header />
   <main
     id="main"
-    class="relative noise-container w-full h-full flex flex-1 flex-col overflow-x-hidden"
+    class="snap-y snap-mandatory relative noise-container w-full h-screen flex flex-1 flex-col overflow-x-hidden overflow-auto"
   >
-    <div id="intro">
+    <div class="snap-center" id="intro">
       <div class="hero items-center relative h-screen flex flex-col">
         <article
           class="grid gap-x-20 grid-cols-2 pb-5 items-center justify-center pt-40"
@@ -89,8 +89,8 @@ import Projects from "../components/Projects.astro";
         </article>
       </div>
     </div>
-    <div class="noise"></div>
-    <div id="projects">
+
+    <div class="snap-center" id="projects">
       <div
         class="container pt-32 z-40 relative max-w-[1160px] h-screen mr-auto ml-auto"
       >
@@ -357,7 +357,7 @@ import Projects from "../components/Projects.astro";
         </div>
       </div>
     </div>
-    <div id="aboutme">
+    <div class="snap-center" id="aboutme">
       <div
         class="container snap-center pt-40 relative max-w-[1160px] h-screen mr-auto ml-auto"
       >

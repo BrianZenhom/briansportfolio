@@ -10,7 +10,7 @@ import LogoBz from "../components/LogoBz.astro";
 >
   <div class="noise"></div>
   <div class="flex p-2 flex-grow basis-0">
-    <a class="hover:scale-110 transition-all ease-in-out" href="#">
+    <a class="hover:scale-110 transition-all ease-in-out" href="#intro">
       <LogoBz />
     </a>
   </div>
@@ -30,9 +30,13 @@ import LogoBz from "../components/LogoBz.astro";
       class="flex text-sm [&>li>a]:text-white [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
     >
       <li>
-        <a href="https://www.linkedin.com/in/brianzenhom/"><LinkedLogo /></a>
+        <a target="_blank" href="https://www.linkedin.com/in/brianzenhom/"
+          ><LinkedLogo /></a
+        >
       </li>
-      <li><a href="https://github.com/BrianZenhom"><IconGit /></a></li>
+      <li>
+        <a target="_blank" href="https://github.com/BrianZenhom"><IconGit /></a>
+      </li>
     </ul>
   </nav>
 
