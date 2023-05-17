@@ -8,208 +8,480 @@ import Projects from "../components/Projects.astro";
 
 <Layout title="Brian Zenhom">
   <Header />
-  <main id="main" class="noise-container z-10 w-full flex flex-1 flex-col">
+  <main
+    id="main"
+    class="noise-container z-10 h-full flex flex-1 flex-col overflow-hidden"
+  >
+    <div class="hero z-30 items-center relative h-screen flex flex-col">
+      <article
+        class="grid gap-x-20 grid-cols-2 pb-5 items-center justify-center mt-14"
+      >
+        <div class="flex items-center justify-end">
+          <div>
+            <h1 class="text-white pt-40 text-7xl font-extrabold">
+              Brian Zenhom
+            </h1>
+            <h1
+              class="text-white text-5xl font-normal pb-10 mt-0 tracking-wide"
+            >
+              <b
+                class="bg-gradient-to-r from-mainColor to-blue-300 text-transparent bg-clip-text font-black"
+              >
+                FullStack</b
+              > Developer
+            </h1>
+            <h2 class="text-white pt-18 text-2xl">
+              <b>9+</b> years Graphic Designing.<br /><b>2+</b> years Web Developing.
+            </h2>
+            <p class="text-white text-base py-10">
+              Building my version of the web.
+              <br />Improving my skills through continuous learning.
+            </p>
+          </div>
+
+          <div class="absolute top-0 bottom-0 h-full"></div>
+        </div>
+        <div class="md:bg-transparent min-h-full flex items-center justify-end">
+          <div class="relative flex justify-end animated show">
+            <img
+              height="600"
+              width="500"
+              class="object-cover mt-5 z-20 bg-clip-border rounded-3xl"
+              src="/me4.webp"
+              alt="Brian Zenhom good face"
+            />
+            <div
+              class="rounded-3xl bg-gradient-to-r from-blue-600 to-blue-300 transition duration-1000 group-hover:duration-200 animate-tilt w-full aspect-video z-1 absolute bottom-0 blur"
+            >
+            </div>
+            <div
+              class="rounded-3xl bg-bg-color w-full aspect-video z-0 absolute bottom-0"
+            >
+            </div>
+          </div>
+        </div>
+        <footer class="z-30 pt-48 justify-center col-span-2">
+          <div class="grid gap-8 items-start justify-center">
+            <div class="relative group">
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-300 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"
+              >
+              </div>
+              <button
+                class="relative px-7 py-4 bg-bg-color rounded-lg leading-none flex items-center divide-x divide-gray-600"
+              >
+                <span class="flex items-center space-x-5">
+                  <IconCV />
+                  <span class="pr-6 text-gray-100 font-bold">Download CV</span>
+                </span>
+                <span
+                  class="pl-6 text-gray-100 group-hover:text-gray-100 transition duration-200"
+                  ><IconDownload /></span
+                ></button
+              >
+            </div>
+          </div>
+        </footer>
+      </article>
+    </div>
     <div class="noise"></div>
-    <section class="h-full w-full relative overflow-hidden pt-20">
-      <div class="noise"></div>
-      <div class="hero z-30 items-center relative h-full flex flex-col">
-        <article
-          class="grid gap-x-20 grid-cols-2 pb-5 items-center justify-center mt-14"
-        >
-          <div class="flex items-center justify-end">
-            <div>
-              <h1 class="text-white pt-40 text-7xl font-extrabold">
-                Brian Zenhom
-              </h1>
-              <h1
-                class="text-white text-5xl font-normal pb-10 mt-0 tracking-wide"
-              >
-                <b
-                  class="bg-gradient-to-r from-mainColor to-blue-300 text-transparent bg-clip-text font-black"
-                >
-                  FullStack</b
-                > Developer
-              </h1>
-              <h2 class="text-white pt-18 text-2xl">
-                <b>9+</b> years Graphic Designing.<br /><b>2+</b> years Web Developing.
-              </h2>
-              <p class="text-white text-base py-10">
-                Building my version of the web.
-                <br />Improving my skills through continuous learning.
-              </p>
-            </div>
-
-            <div class="absolute top-0 bottom-0 h-full"></div>
-          </div>
-          <div
-            class="md:bg-transparent min-h-full flex items-center justify-end"
+    <div1
+      class="container pt-20 relative max-w-[1160px] h-screen mr-auto ml-auto"
+    >
+      <h1 class="text-white font-black text-2xl text-left">Projects</h1>
+      <span class="text-white font-normal">Some of my work</span>
+      <div
+        class="grid mt-12 gap-5 md:grid-flow-row-dense md:grid-cols-2 lg:grid-cols-3"
+      >
+        <li>
+          <article
+            class="group relative flex flex-col w-full h-full overflow-hidden bg-bg-color aspect-video cursor-pointer"
           >
-            <div class="relative flex justify-end animated show">
+            <a
+              href="https://sweetcloud.com"
+              rel="noopener"
+              target="_blank"
+              class="h-full w=full"
+            >
+              <span class="sr-only text-white">MoonValley</span>
               <img
-                height="600"
-                width="500"
-                class="object-cover mt-5 z-20 bg-clip-border rounded-3xl"
-                src="/me4.webp"
-                alt="Brian Zenhom good face"
+                src="/SweetCloud-logo-Main.jpg"
+                width="800"
+                height="454"
+                loading="lazy"
+                decoding="async"
+                alt=""
+                class="h-full w-full object-cover rounded-lg"
               />
-              <div
-                class="rounded-3xl bg-gradient-to-r from-blue-600 to-blue-300 transition duration-1000 group-hover:duration-200 animate-tilt w-full aspect-video z-1 absolute bottom-0 blur"
+              <footer
+                class="noise-panel pointer-events-none absolute bottom-0 z-10 flex w-full flex-col gap-2 bg-bg-color p-4 opacity-0 transition-opacity duration-300 ease-out group-focus-within:opacity-100 group-hover:opacity-100 rounded-lg"
               >
-              </div>
-              <div
-                class="rounded-3xl bg-bg-color w-full aspect-video z-0 absolute bottom-0"
+                <h2 class="heading-5 text-white">SweetCloud</h2>
+                <p class="body flex flex-row items-center gap-2">
+                  <span class="text-white">Cake selling company website</span>
+                  <svg
+                    data-hk="0-0"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    ><path
+                      d="M17.9199 6.62C17.8185 6.37565 17.6243 6.18147 17.3799 6.08C17.2597 6.02876 17.1306 6.00158 16.9999 6H6.99994C6.73472 6 6.48037 6.10536 6.29283 6.29289C6.1053 6.48043 5.99994 6.73478 5.99994 7C5.99994 7.26522 6.1053 7.51957 6.29283 7.70711C6.48037 7.89464 6.73472 8 6.99994 8H14.5899L6.28994 16.29C6.19621 16.383 6.12182 16.4936 6.07105 16.6154C6.02028 16.7373 5.99414 16.868 5.99414 17C5.99414 17.132 6.02028 17.2627 6.07105 17.3846C6.12182 17.5064 6.19621 17.617 6.28994 17.71C6.3829 17.8037 6.4935 17.8781 6.61536 17.9289C6.73722 17.9797 6.86793 18.0058 6.99994 18.0058C7.13195 18.0058 7.26266 17.9797 7.38452 17.9289C7.50638 17.8781 7.61698 17.8037 7.70994 17.71L15.9999 9.41V17C15.9999 17.2652 16.1053 17.5196 16.2928 17.7071C16.4804 17.8946 16.7347 18 16.9999 18C17.2652 18 17.5195 17.8946 17.707 17.7071C17.8946 17.5196 17.9999 17.2652 17.9999 17V7C17.9984 6.86932 17.9712 6.74022 17.9199 6.62Z"
+                      fill="#fff"></path></svg
+                  >
+                </p>
+              </footer>
+            </a>
+          </article>
+        </li>
+        <li>
+          <article
+            class="group relative flex flex-col w-full h-full overflow-hidden bg-astro-600 aspect-video cursor-pointer"
+          >
+            <a
+              href="https://moonvalleytours.com"
+              rel="noopener"
+              target="_blank"
+              class="h-full w=full"
+            >
+              <span class="sr-only text-white">MoonValley</span>
+              <img
+                src="/moonvalley.webp"
+                width="800"
+                height="454"
+                loading="lazy"
+                decoding="async"
+                alt=""
+                class="h-full w-full object-cover rounded-lg"
+              />
+              <footer
+                class="noise-panel pointer-events-none absolute bottom-0 z-10 flex w-full flex-col gap-2 bg-bg-color p-4 opacity-0 transition-opacity duration-300 ease-out group-focus-within:opacity-100 group-hover:opacity-100 rounded-lg"
               >
-              </div>
-            </div>
-          </div>
-          <footer class="z-30 pt-28 justify-center col-span-2">
-            <div class="grid gap-8 items-start justify-center">
-              <div class="relative group">
-                <div
-                  class="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-300 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"
-                >
-                </div>
-                <button
-                  class="relative px-7 py-4 bg-bg-color rounded-lg leading-none flex items-center divide-x divide-gray-600"
-                >
-                  <span class="flex items-center space-x-5">
-                    <IconCV />
-                    <span class="pr-6 text-gray-100 font-bold">Download CV</span
-                    >
-                  </span>
-                  <span
-                    class="pl-6 text-gray-100 group-hover:text-gray-100 transition duration-200"
-                    ><IconDownload /></span
-                  ></button
-                >
-              </div>
-            </div>
-          </footer>
-        </article>
+                <h2 class="heading-5 text-white">MoonValleyTours</h2>
+                <p class="body flex flex-row items-center gap-2">
+                  <span class="text-white">https://moonvalleytours.com</span>
+                  <svg
+                    data-hk="0-0"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    ><path
+                      d="M17.9199 6.62C17.8185 6.37565 17.6243 6.18147 17.3799 6.08C17.2597 6.02876 17.1306 6.00158 16.9999 6H6.99994C6.73472 6 6.48037 6.10536 6.29283 6.29289C6.1053 6.48043 5.99994 6.73478 5.99994 7C5.99994 7.26522 6.1053 7.51957 6.29283 7.70711C6.48037 7.89464 6.73472 8 6.99994 8H14.5899L6.28994 16.29C6.19621 16.383 6.12182 16.4936 6.07105 16.6154C6.02028 16.7373 5.99414 16.868 5.99414 17C5.99414 17.132 6.02028 17.2627 6.07105 17.3846C6.12182 17.5064 6.19621 17.617 6.28994 17.71C6.3829 17.8037 6.4935 17.8781 6.61536 17.9289C6.73722 17.9797 6.86793 18.0058 6.99994 18.0058C7.13195 18.0058 7.26266 17.9797 7.38452 17.9289C7.50638 17.8781 7.61698 17.8037 7.70994 17.71L15.9999 9.41V17C15.9999 17.2652 16.1053 17.5196 16.2928 17.7071C16.4804 17.8946 16.7347 18 16.9999 18C17.2652 18 17.5195 17.8946 17.707 17.7071C17.8946 17.5196 17.9999 17.2652 17.9999 17V7C17.9984 6.86932 17.9712 6.74022 17.9199 6.62Z"
+                      fill="#fff"></path></svg
+                  >
+                </p>
+              </footer>
+            </a>
+          </article>
+        </li>
+        <li>
+          <article
+            class="group relative flex flex-col w-full h-full overflow-hidden bg-astro-600 aspect-video cursor-pointer"
+          >
+            <a
+              href="https://moonvalleytours.com"
+              rel="noopener"
+              target="_blank"
+              class="h-full w=full"
+            >
+              <span class="sr-only text-white">MoonValley</span>
+              <img
+                src="/moonvalley.webp"
+                width="800"
+                height="454"
+                loading="lazy"
+                decoding="async"
+                alt=""
+                class="h-full w-full object-cover rounded-lg"
+              />
+              <footer
+                class="noise-panel pointer-events-none absolute bottom-0 z-10 flex w-full flex-col gap-2 bg-bg-color p-4 opacity-0 transition-opacity duration-300 ease-out group-focus-within:opacity-100 group-hover:opacity-100 rounded-lg"
+              >
+                <h2 class="heading-5 text-white">MoonValleyTours</h2>
+                <p class="body flex flex-row items-center gap-2">
+                  <span class="text-white">https://moonvalleytours.com</span>
+                  <svg
+                    data-hk="0-0"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    ><path
+                      d="M17.9199 6.62C17.8185 6.37565 17.6243 6.18147 17.3799 6.08C17.2597 6.02876 17.1306 6.00158 16.9999 6H6.99994C6.73472 6 6.48037 6.10536 6.29283 6.29289C6.1053 6.48043 5.99994 6.73478 5.99994 7C5.99994 7.26522 6.1053 7.51957 6.29283 7.70711C6.48037 7.89464 6.73472 8 6.99994 8H14.5899L6.28994 16.29C6.19621 16.383 6.12182 16.4936 6.07105 16.6154C6.02028 16.7373 5.99414 16.868 5.99414 17C5.99414 17.132 6.02028 17.2627 6.07105 17.3846C6.12182 17.5064 6.19621 17.617 6.28994 17.71C6.3829 17.8037 6.4935 17.8781 6.61536 17.9289C6.73722 17.9797 6.86793 18.0058 6.99994 18.0058C7.13195 18.0058 7.26266 17.9797 7.38452 17.9289C7.50638 17.8781 7.61698 17.8037 7.70994 17.71L15.9999 9.41V17C15.9999 17.2652 16.1053 17.5196 16.2928 17.7071C16.4804 17.8946 16.7347 18 16.9999 18C17.2652 18 17.5195 17.8946 17.707 17.7071C17.8946 17.5196 17.9999 17.2652 17.9999 17V7C17.9984 6.86932 17.9712 6.74022 17.9199 6.62Z"
+                      fill="#fff"></path></svg
+                  >
+                </p>
+              </footer>
+            </a>
+          </article>
+        </li>
+        <li class="md:col-span-2 md:row-span-2">
+          <article
+            class="group relative flex flex-col w-full h-full overflow-hidden bg-astro-600 aspect-video cursor-pointer"
+          >
+            <a
+              href="https://moonvalleytours.com"
+              rel="noopener"
+              target="_blank"
+              class="h-full w=full"
+            >
+              <span class="sr-only text-white">MoonValley</span>
+              <img
+                src="/moonvalley.webp"
+                width="800"
+                height="454"
+                loading="lazy"
+                decoding="async"
+                alt=""
+                class="h-full w-full object-cover rounded-lg"
+              />
+              <footer
+                class="noise-panel pointer-events-none absolute bottom-0 z-10 flex w-full flex-col gap-2 bg-bg-color p-4 opacity-0 transition-opacity duration-300 ease-out group-focus-within:opacity-100 group-hover:opacity-100 rounded-lg"
+              >
+                <h2 class="heading-5 text-white">MoonValleyTours</h2>
+                <p class="body flex flex-row items-center gap-2">
+                  <span class="text-white"
+                    >Travel Agency website from turkey, handles reservations for
+                    vacations and destinations and flights</span
+                  >
+                  <svg
+                    data-hk="0-0"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    ><path
+                      d="M17.9199 6.62C17.8185 6.37565 17.6243 6.18147 17.3799 6.08C17.2597 6.02876 17.1306 6.00158 16.9999 6H6.99994C6.73472 6 6.48037 6.10536 6.29283 6.29289C6.1053 6.48043 5.99994 6.73478 5.99994 7C5.99994 7.26522 6.1053 7.51957 6.29283 7.70711C6.48037 7.89464 6.73472 8 6.99994 8H14.5899L6.28994 16.29C6.19621 16.383 6.12182 16.4936 6.07105 16.6154C6.02028 16.7373 5.99414 16.868 5.99414 17C5.99414 17.132 6.02028 17.2627 6.07105 17.3846C6.12182 17.5064 6.19621 17.617 6.28994 17.71C6.3829 17.8037 6.4935 17.8781 6.61536 17.9289C6.73722 17.9797 6.86793 18.0058 6.99994 18.0058C7.13195 18.0058 7.26266 17.9797 7.38452 17.9289C7.50638 17.8781 7.61698 17.8037 7.70994 17.71L15.9999 9.41V17C15.9999 17.2652 16.1053 17.5196 16.2928 17.7071C16.4804 17.8946 16.7347 18 16.9999 18C17.2652 18 17.5195 17.8946 17.707 17.7071C17.8946 17.5196 17.9999 17.2652 17.9999 17V7C17.9984 6.86932 17.9712 6.74022 17.9199 6.62Z"
+                      fill="#fff"></path></svg
+                  >
+                </p>
+              </footer>
+            </a>
+          </article>
+        </li>
+        <li>
+          <article
+            class="group relative flex flex-col w-full h-full overflow-hidden bg-bg-color aspect-video cursor-pointer"
+          >
+            <a
+              href="https://moonvalleytours.com"
+              rel="noopener"
+              target="_blank"
+              class="h-full w=full"
+            >
+              <span class="sr-only text-white">MoonValley</span>
+              <img
+                src="/moonvalley.webp"
+                width="800"
+                height="454"
+                loading="lazy"
+                decoding="async"
+                alt=""
+                class="h-full w-full object-cover rounded-lg"
+              />
+              <footer
+                class="noise-panel pointer-events-none absolute bottom-0 z-10 flex w-full flex-col gap-2 bg-bg-color p-4 opacity-0 transition-opacity duration-300 ease-out group-focus-within:opacity-100 group-hover:opacity-100 rounded-lg"
+              >
+                <h2 class="heading-5 text-white">MoonValleyTours</h2>
+                <p class="body flex flex-row items-center gap-2">
+                  <span class="text-white">https://moonvalleytours.com</span>
+                  <svg
+                    data-hk="0-0"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    ><path
+                      d="M17.9199 6.62C17.8185 6.37565 17.6243 6.18147 17.3799 6.08C17.2597 6.02876 17.1306 6.00158 16.9999 6H6.99994C6.73472 6 6.48037 6.10536 6.29283 6.29289C6.1053 6.48043 5.99994 6.73478 5.99994 7C5.99994 7.26522 6.1053 7.51957 6.29283 7.70711C6.48037 7.89464 6.73472 8 6.99994 8H14.5899L6.28994 16.29C6.19621 16.383 6.12182 16.4936 6.07105 16.6154C6.02028 16.7373 5.99414 16.868 5.99414 17C5.99414 17.132 6.02028 17.2627 6.07105 17.3846C6.12182 17.5064 6.19621 17.617 6.28994 17.71C6.3829 17.8037 6.4935 17.8781 6.61536 17.9289C6.73722 17.9797 6.86793 18.0058 6.99994 18.0058C7.13195 18.0058 7.26266 17.9797 7.38452 17.9289C7.50638 17.8781 7.61698 17.8037 7.70994 17.71L15.9999 9.41V17C15.9999 17.2652 16.1053 17.5196 16.2928 17.7071C16.4804 17.8946 16.7347 18 16.9999 18C17.2652 18 17.5195 17.8946 17.707 17.7071C17.8946 17.5196 17.9999 17.2652 17.9999 17V7C17.9984 6.86932 17.9712 6.74022 17.9199 6.62Z"
+                      fill="#fff"></path></svg
+                  >
+                </p>
+              </footer>
+            </a>
+          </article>
+        </li>
+        <li>
+          <article
+            class="group relative flex flex-col w-full h-full overflow-hidden bg-bg-color aspect-video cursor-pointer"
+          >
+            <a
+              href="https://moonvalleytours.com"
+              rel="noopener"
+              target="_blank"
+              class="h-full w=full"
+            >
+              <span class="sr-only text-white">MoonValley</span>
+              <img
+                src="/moonvalley.webp"
+                width="800"
+                height="454"
+                loading="lazy"
+                decoding="async"
+                alt=""
+                class="h-full w-full object-cover rounded-lg"
+              />
+              <footer
+                class="noise-panel pointer-events-none absolute bottom-0 z-10 flex w-full flex-col gap-2 bg-bg-color p-4 opacity-0 transition-opacity duration-300 ease-out group-focus-within:opacity-100 group-hover:opacity-100 rounded-lg"
+              >
+                <h2 class="heading-5 text-white">MoonValleyTours</h2>
+                <p class="body flex flex-row items-center gap-2">
+                  <span class="text-white">https://moonvalleytours.com</span>
+                  <svg
+                    data-hk="0-0"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    ><path
+                      d="M17.9199 6.62C17.8185 6.37565 17.6243 6.18147 17.3799 6.08C17.2597 6.02876 17.1306 6.00158 16.9999 6H6.99994C6.73472 6 6.48037 6.10536 6.29283 6.29289C6.1053 6.48043 5.99994 6.73478 5.99994 7C5.99994 7.26522 6.1053 7.51957 6.29283 7.70711C6.48037 7.89464 6.73472 8 6.99994 8H14.5899L6.28994 16.29C6.19621 16.383 6.12182 16.4936 6.07105 16.6154C6.02028 16.7373 5.99414 16.868 5.99414 17C5.99414 17.132 6.02028 17.2627 6.07105 17.3846C6.12182 17.5064 6.19621 17.617 6.28994 17.71C6.3829 17.8037 6.4935 17.8781 6.61536 17.9289C6.73722 17.9797 6.86793 18.0058 6.99994 18.0058C7.13195 18.0058 7.26266 17.9797 7.38452 17.9289C7.50638 17.8781 7.61698 17.8037 7.70994 17.71L15.9999 9.41V17C15.9999 17.2652 16.1053 17.5196 16.2928 17.7071C16.4804 17.8946 16.7347 18 16.9999 18C17.2652 18 17.5195 17.8946 17.707 17.7071C17.8946 17.5196 17.9999 17.2652 17.9999 17V7C17.9984 6.86932 17.9712 6.74022 17.9199 6.62Z"
+                      fill="#fff"></path></svg
+                  >
+                </p>
+              </footer>
+            </a>
+          </article>
+        </li>
       </div>
-      <Projects />
-    </section>
+    </div1>
+    <div
+      class="container pt-40 relative max-w-[1160px] h-screen mr-auto ml-auto"
+    >
+      <h1 class="text-white font-black text-2xl text-left">About me</h1>
+      <span class="text-white font-normal">My experience over the years</span>
+    </div>
   </main>
-
-  <style>
-    * {
-      text-decoration: none;
-      list-style: none;
-    }
-    .noise-container {
-      position: relative;
-      isolation: isolate;
-      background-color: #17191e;
-    }
-    .noise-panel {
-      position: relative;
-      isolation: isolate;
-      border-width: 1px;
-      --tw-border-opacity: 1;
-      border-color: rgb(52 56 65 / var(--tw-border-opacity));
-      --tw-bg-opacity: 1;
-      background-color: rgb(35 38 45 / var(--tw-bg-opacity));
-      --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
-        0 8px 10px -6px rgb(0 0 0 / 0.1);
-      --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
-        0 8px 10px -6px var(--tw-shadow-color);
-      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
-        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-    }
-    .noise-panel:before {
-      position: absolute;
-      inset: 0;
-      z-index: -20;
-      opacity: 0.4;
-      mix-blend-mode: overlay;
-      content: "";
-      background-image: url(/noise.webp);
-    }
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border-width: 0;
-    }
-    a {
-      color: inherit;
-      text-decoration: inherit;
-    }
-    main::before {
-      position: absolute;
-      aspect-ratio: 1 / 1;
-      width: 100%;
-      background-repeat: repeat;
-      content: "";
-      background-size: 20px 20px;
-      background-image: linear-gradient(
-          to right,
-          rgb(35 38 45) 1px,
-          transparent 1px
-        ),
-        linear-gradient(to bottom, rgb(35 38 45) 1px, transparent 1px);
-      -webkit-mask-image: linear-gradient(to bottom, white, transparent);
-      mask-image: linear-gradient(to bottom, white, transparent);
-      z-index: -1;
-    }
-    .hero::before {
-      position: absolute;
-      content: "";
-      height: 50vw;
-      width: 100vw;
-      top: 50%;
-      translate: 0 -30%;
-      left: -60vw;
-      background: url(/noise.webp) repeat,
-        linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
-      background-blend-mode: overlay;
-      -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.4), transparent 65%);
-      mask-image: radial-gradient(rgba(0, 0, 0, 0.4), transparent 65%);
-      z-index: 0;
-    }
-    .hero::after {
-      position: absolute;
-      content: "";
-      height: 50vw;
-      width: 100vw;
-      top: 50%;
-      translate: 0 -30%;
-      right: -60vw;
-      background: url(/noise.webp) repeat,
-        linear-gradient(247.23deg, #d9d7ff 0%, #2f4cb3 100%);
-      background-blend-mode: overlay;
-      -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.5), transparent 65%);
-      mask-image: radial-gradient(rgba(0, 0, 0, 0.5), transparent 65%);
-      z-index: 0;
-    }
-    .noise {
-      z-index: -20;
-      position: absolute;
-      inset: 0;
-      background-image: url(/noise.webp);
-      opacity: 0.4;
-      mix-blend-mode: overlay;
-      pointer-events: none;
-    }
-    .backgrounds:last-of-type:after {
-      position: absolute;
-      content: "";
-      height: 50vw;
-      width: 100vw;
-      bottom: 0;
-      translate: 0 70%;
-      left: 0;
-      background: url(/noise.webp) repeat,
-        linear-gradient(266.93deg, #00a6ff 0%, #ff7c5400 100%);
-      background-blend-mode: overlay;
-      -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.8), transparent 60%);
-      mask-image: radial-gradient(rgba(0, 0, 0, 0.8), transparent 60%);
-      z-index: -1;
-    }
-  </style>
 </Layout>
+
+<style>
+  *,
+  :before,
+  :after {
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: #e5e7eb;
+  }
+  .noise-container {
+    position: relative;
+    isolation: isolate;
+    background-color: #17191e;
+  }
+  .noise-panel {
+    position: relative;
+    isolation: isolate;
+    border-width: 1px;
+    --tw-border-opacity: 1;
+    border-color: rgb(52 56 65 / var(--tw-border-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(35 38 45 / var(--tw-bg-opacity));
+    --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+      0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
+      0 8px 10px -6px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+  .noise-panel:before {
+    position: absolute;
+    inset: 0;
+    z-index: -20;
+    opacity: 0.4;
+    mix-blend-mode: overlay;
+    content: "";
+    background-image: url(/noise.webp);
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+  main::before {
+    position: absolute;
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    background-repeat: repeat;
+    content: "";
+    background-size: 20px 20px;
+    background-image: linear-gradient(
+        to right,
+        rgb(35 38 45) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgb(35 38 45) 1px, transparent 1px);
+    -webkit-mask-image: linear-gradient(to bottom, white, transparent);
+    mask-image: linear-gradient(to bottom, white, transparent);
+    z-index: -1;
+  }
+  .hero::before {
+    position: absolute;
+    content: "";
+    height: 90vw;
+    width: 100vw;
+    top: 50%;
+    translate: 0 -30%;
+    left: -60vw;
+    background: url(/noise.webp) repeat,
+      linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
+    background-blend-mode: overlay;
+    -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.4), transparent 65%);
+    mask-image: radial-gradient(rgba(0, 0, 0, 0.4), transparent 65%);
+    z-index: 0;
+  }
+  .hero::after {
+    position: absolute;
+    content: "";
+    height: 90vw;
+    width: 100vw;
+    top: 50%;
+    translate: 0 -30%;
+    right: -60vw;
+    background: url(/noise.webp) repeat,
+      linear-gradient(247.23deg, #d9d7ff 0%, #2f4cb3 100%);
+    background-blend-mode: overlay;
+    -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.5), transparent 65%);
+    mask-image: radial-gradient(rgba(0, 0, 0, 0.5), transparent 65%);
+    z-index: 0;
+  }
+  .noise {
+    z-index: -20;
+    position: absolute;
+    inset: 0;
+    background-image: url(/noise.webp);
+    opacity: 0.4;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+  }
+  .backgrounds:last-of-type:after {
+    position: absolute;
+    content: "";
+    height: 50vw;
+    width: 100vw;
+    bottom: 0;
+    translate: 0 80%;
+    background: url(/noise.webp) repeat,
+      linear-gradient(266.93deg, #f8e42e 0%, #ff7d54 100%);
+    background-blend-mode: overlay;
+    -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.8), transparent 60%);
+    mask-image: radial-gradient(rgba(0, 0, 0, 0.8), transparent 60%);
+    z-index: -1;
+  }
+</style>
