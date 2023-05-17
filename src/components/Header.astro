@@ -5,18 +5,21 @@ import LogoBz from "../components/LogoBz.astro";
 ---
 
 <header
+  id="landing-header"
   class="noise-container h-header py-2 bg-bg-color px-24 flex items-center fixed top-0 w-full justify-between z-40 text-white"
 >
   <div class="noise"></div>
-  <div class="flex flex-grow basis-0">
-    <LogoBz />
+  <div class="flex p-2 flex-grow basis-0">
+    <a class="hover:scale-110 transition-all ease-in-out" href="#">
+      <LogoBz />
+    </a>
   </div>
   <nav>
     <ul
       class="flex text-sm [&>li>a]:text-white [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
     >
-      <li><a href="#">Projects</a></li>
-      <li><a href="#">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#aboutme">About</a></li>
       <li><a href="#">Services</a></li>
       <li><a href="#">Contact</a></li>
     </ul>
@@ -32,8 +35,57 @@ import LogoBz from "../components/LogoBz.astro";
       <li><a href="https://github.com/BrianZenhom"><IconGit /></a></li>
     </ul>
   </nav>
+
+  <div
+    class={`absolute bg-gradient-to-r from-mainColor to-blue-300 backdrop-blur-lg rounded
+  left-[var(--left)] top-[var(--top)]
+  w-[var(--width)] h-[var(--height)]
+  transition-all duration-300
+  ease-in-out opacity-0 -z-10
+  `}
+    id="menu-backdrop"
+  >
+  </div>
 </header>
+<script>
+  const listItem = document.querySelectorAll("#landing-header li");
+  const menuBackDrop = document.querySelector("#menu-backdrop") as HTMLElement;
+
+  listItem.forEach((item) => {
+    item.addEventListener("mouseenter", () => {
+      const { left, top, width, height } = item.getBoundingClientRect();
+
+      menuBackDrop.style.setProperty("--left", `${left}px`);
+      menuBackDrop.style.setProperty("--top", `${top}px`);
+      menuBackDrop.style.setProperty("--width", `${width}px`);
+      menuBackDrop.style.setProperty("--height", `${height}px`);
+
+      menuBackDrop.style.opacity = "1";
+      menuBackDrop.style.visibility = "visible";
+    });
+
+    item.addEventListener("mouseleave", () => {
+      menuBackDrop.style.opacity = "0";
+      menuBackDrop.style.visibility = "hidden";
+    });
+  });
+</script>
+
 <style>
+  html {
+    scroll-behavior: smooth;
+  }
+  *,
+  :before,
+  :after {
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: #e5e7eb;
+    scroll-behavior: smooth;
+  }
   .noise-container {
     position: relative;
     isolation: isolate;
