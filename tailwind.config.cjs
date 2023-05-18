@@ -12,6 +12,8 @@ module.exports = {
       colors: {
         "bg-color": "#17191e",
         mainColor: "#3245ff",
+        "text-main": "#17191e",
+        "blue-color": "#3245ff",
       },
       animation: {
         tilt: "tilt 10s infinite linear",
