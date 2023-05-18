@@ -10,7 +10,7 @@ import LogoBz from "../components/LogoBz.astro";
 >
   <div class="noise"></div>
   <div class="flex p-2 flex-grow basis-0">
-    <a class="hover:scale-110 transition-all ease-in-out" href="#intro">
+    <a class="hover:scale-110 p-2 transition-all ease-in-out" href="#intro">
       <LogoBz />
     </a>
   </div>
@@ -41,8 +41,9 @@ import LogoBz from "../components/LogoBz.astro";
   </nav>
 
   <div
-    class={`absolute bg-gradient-to-r from-mainColor to-blue-300 backdrop-blur-lg rounded
-  left-[var(--left)] top-[var(--top)]
+    class={`absolute bg-gradient-to-r from-mainColor to-blue-300 backdrop-blur-lg rounded-md
+  translate-x-[var(--left)] translate-y-[var(--top)]
+  top-0 left-0
   w-[var(--width)] h-[var(--height)]
   transition-all duration-300
   ease-in-out opacity-0 -z-10
