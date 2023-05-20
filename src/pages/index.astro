@@ -9,15 +9,15 @@ import Aboutme from "../components/Aboutme.astro";
 ---
 
 <Layout title="Brian Zenhom">
-  <Header />
+  <Header class="top-0" />
   <main
     id="main"
-    class="snap-y snap-mandatory relative noise-container w-full h-screen flex flex-1 flex-col overflow-x-hidden overflow-auto"
+    class="snap-y snap-mandatory relative noise-container w-full h-screen flex flex-1 flex-col overflow-x-hidden"
   >
     <div class="snap-center" id="intro">
-      <div class="hero items-center relative h-screen flex flex-col">
+      <div class="hero pt-24 items-center relative h-screen flex flex-col">
         <article
-          class="grid gap-x-20 grid-cols-2 pb-5 items-center justify-center pt-40"
+          class="grid gap-x-20 grid-cols-2 pb-5 items-center justify-center"
         >
           <div class="flex items-center justify-end">
             <div>
@@ -105,8 +105,18 @@ import Aboutme from "../components/Aboutme.astro";
 </Layout>
 
 <style>
+  ::-webkit-scrollbar-track {
+    background: none;
+  }
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  body {
+    overflow-y: hidden;
+    margin: 0;
+    line-height: inherit;
   }
   *,
   :before,
@@ -120,7 +130,6 @@ import Aboutme from "../components/Aboutme.astro";
     scroll-behavior: smooth;
   }
   .noise-container {
-    position: relative;
     isolation: isolate;
     background-color: #17191e;
   }
