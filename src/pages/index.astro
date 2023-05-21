@@ -11,22 +11,22 @@ import Contactme from "../components/Contactme.astro";
 
 <Layout title="Brian Zenhom">
   <Header class="top-0" />
+  <div class="noise"></div>
   <main
     id="main"
     class="snap-y snap-mandatory relative noise-container w-full h-screen flex flex-1 flex-col overflow-x-hidden"
   >
-    <div class="noise"></div>
     <div class="snap-center" id="intro">
-      <div
-        class="hero pt-24 max-sm:pt-0 items-center relative h-screen flex flex-col"
-      >
+      <div class="hero pt-24 items-center h-screen flex flex-col max-sm:pt-0">
         <article
           class="grid gap-x-20 grid-cols-2 pb-5 items-center justify-center max-sm:block max-sm:grid-rows-1 max-sm:grid-cols-1"
         >
-          <div class="flex items-center justify-end max-sm:justify-center">
+          <div
+            class="flex items-center justify-end max-sm:justify-center max-sm:pl-5"
+          >
             <div>
               <h1
-                class="ml-[-4px] text-white pt-40 text-7xl font-extrabold max-sm:pt-40 max-sm:text-5xl"
+                class="ml-[-4px] text-white pt-40 text-7xl font-extrabold max-sm:pt-32 max-sm:text-5xl"
               >
                 Brian Zenhom
               </h1>
