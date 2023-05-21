@@ -16,17 +16,21 @@ import Contactme from "../components/Contactme.astro";
     class="snap-y snap-mandatory relative noise-container w-full h-screen flex flex-1 flex-col overflow-x-hidden"
   >
     <div class="snap-center" id="intro">
-      <div class="hero pt-24 items-center relative h-screen flex flex-col">
+      <div
+        class="hero pt-24 max-sm:pt-0 items-center relative h-screen flex flex-col"
+      >
         <article
-          class="grid gap-x-20 grid-cols-2 pb-5 items-center justify-center"
+          class="grid gap-x-20 grid-cols-2 pb-5 items-center justify-center max-sm:block max-sm:grid-rows-1 max-sm:grid-cols-1"
         >
-          <div class="flex items-center justify-end">
+          <div class="flex items-center justify-end max-sm:justify-center">
             <div>
-              <h1 class="ml-[-4px] text-white pt-40 text-7xl font-extrabold">
+              <h1
+                class="ml-[-4px] text-white pt-40 text-7xl font-extrabold max-sm:pt-40 max-sm:text-5xl"
+              >
                 Brian Zenhom
               </h1>
               <h1
-                class="text-white text-5xl pb-10 mt-0 tracking-[.020em] font-black"
+                class="text-white text-5xl mt-0 tracking-[.020em] font-black max-sm:text-[32px]"
               >
                 <b
                   class="bg-gradient-to-r from-mainColor to-blue-300 text-transparent bg-clip-text font-black ml-[-2px]"
@@ -34,19 +38,21 @@ import Contactme from "../components/Contactme.astro";
                   FullStack</b
                 > Developer
               </h1>
-              <h2 class="text-white text-2xl">
+              <h2 class="text-white text-2xl pb-10 max-sm:text-lg">
+                en <b>Vitoria-Gasteiz</b>, España.
+              </h2>
+
+              <h2 class="text-white text-2xl max-sm:text-lg">
                 <b>9+</b> Years Graphic Designing.<br /><b>2+</b> Years Web Developing.
               </h2>
-              <p class="text-white text-base pt-8">
+              <p class="text-white text-base pt-8 max-sm:text-base">
                 Building my version of the web.
                 <br />Improving my skills through continuous learning.
               </p>
             </div>
-
-            <div class="absolute top-0 bottom-0 h-full"></div>
           </div>
           <div
-            class="md:bg-transparent min-h-full flex items-center justify-end"
+            class="md:bg-transparent min-h-full flex items-center justify-end max-sm:justify-center"
           >
             <div class="relative flex justify-end animated show">
               <img
@@ -118,6 +124,7 @@ import Contactme from "../components/Contactme.astro";
     overflow-y: hidden;
   }
   body {
+    color: white;
     overflow-y: hidden;
     margin: 0;
     line-height: inherit;
