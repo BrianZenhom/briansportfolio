@@ -1,5 +1,12 @@
 ---
 import Arrowdown from "./Arrowdown.astro";
+import HtmlIcon from "./Html.astro";
+import CssIcon from "./Css.astro";
+import TailwindIcon from "./Tailwind.astro";
+import JavascriptIcon from "./JavascriptIcon.astro";
+import MongoDB from "./MongoDB.astro";
+import Photoshop from "./Photoshop.astro";
+import Illustrator from "./Illustrator.astro";
 ---
 
 <div
@@ -54,7 +61,7 @@ import Arrowdown from "./Arrowdown.astro";
             >I am the ideal candidate for you!</span
           >
         </p>
-        <footer class="z-30 pt-10 justify-center col-span-2 max-sm:pt-2">
+        <footer class="z-30 pt-10 justify-center col-span-2 max-sm:pt-10">
           <div class="grid gap-8 items-start justify-start">
             <div class="relative group">
               <div
@@ -77,6 +84,20 @@ import Arrowdown from "./Arrowdown.astro";
         </footer>
       </div>
     </div>
-    <div class="md:w-1/2">Languages & Tools</div>
+  </div>
+  <div class="leading-3 mt-10">
+    <h2 class="text-left text-white font-black text-2xl max-sm:text-base mb-0">
+      Tools
+    </h2>
+    <span class="text-white font-normal max-sm:text-xs">And Languages</span>
+    <div class="flex h-10 mt-3 justify-between max-sm:gap-4">
+      <HtmlIcon />
+      <CssIcon />
+      <JavascriptIcon />
+      <TailwindIcon />
+      <MongoDB />
+      <Photoshop />
+      <Illustrator />
+    </div>
   </div>
 </div>

@@ -6,7 +6,7 @@ import LogoBz from "../components/LogoBz.astro";
 
 <header
   id="landing-header"
-  class="noise-container h-header py-2 bg-bg-color px-24 flex items-center fixed top-0 w-full justify-between z-50 text-white max-sm:px-5"
+  class="noise-container h-header py-2 bg-bg-color px-24 flex items-center fixed top-0 w-full justify-between z-50 text-white max-sm:flex-col max-sm:items-start max-sm:px-0 max-sm:py-0 max-sm:w-full"
 >
   <div class="noise"></div>
   <div class="flex p-2 flex-grow basis-0 max-sm:p-0">
@@ -16,9 +16,20 @@ import LogoBz from "../components/LogoBz.astro";
       </a>
     </li>
   </div>
-  <nav>
+  <nav class="max-sm:flex-col max-sm:items-start max-sm:w-full">
+    <a
+      id="toggle-button"
+      href="#"
+      class="absolute top-7 right-8 flex-col justify-between hidden w-[30px] h-[21px] rounded-full max-sm:flex"
+    >
+      <span class="bg-white w-full h-1 rounded-full"></span>
+      <span class="bg-white w-full h-1 rounded-full"></span>
+      <span class="bg-white w-full h-1 rounded-full"></span>
+    </a>
+
     <ul
-      class="flex text-sm [&>li>a]:text-white [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2 max-sm:flex-col max-sm:gap-9 max-sm:top-0 max-sm:mt-5 max-sm:block"
+      id="navbar-links"
+      class="flex text-sm [&>li>a]:text-white [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2 max-sm:flex-col max-sm:items-center max-sm:w-full max-sm:gap-5 max-sm:py-10 max-sm:bg-bg-color"
     >
       <li><a href="#projects">Projects</a></li>
       <li><a href="#aboutme">About</a></li>
@@ -29,7 +40,7 @@ import LogoBz from "../components/LogoBz.astro";
 
   <nav class="flex flex-grow justify-end basis-0 w">
     <ul
-      class="flex text-sm [&>li>a]:text-white [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2"
+      class="flex text-sm [&>li>a]:text-white [&>li>a]:font-medium [&>li>a]:inline-block [&>li>a]:px-4 [&>li>a]:py-2 max-sm:hidden"
     >
       <li>
         <a target="_blank" href="https://www.linkedin.com/in/brianzenhom/"
@@ -75,6 +86,13 @@ import LogoBz from "../components/LogoBz.astro";
       menuBackDrop.style.opacity = "0";
       menuBackDrop.style.visibility = "hidden";
     });
+  });
+
+  const toggleButton = document.getElementById("toggle-button");
+  const navbarLinks = document.getElementById("navbar-links");
+
+  toggleButton.addEventListener("click", () => {
+    navbarLinks.classList.add("hidden");
   });
 </script>
 
@@ -153,4 +171,20 @@ import LogoBz from "../components/LogoBz.astro";
     mix-blend-mode: overlay;
     pointer-events: none;
   }
+  /* .toggle-button {
+    position: absolute;
+    top: 1.7rem;
+    right: 2rem;
+    display: none
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+  }
+  .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+  } */
 </style>
