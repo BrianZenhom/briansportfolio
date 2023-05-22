@@ -22,16 +22,16 @@ import Contactme from "../components/Contactme.astro";
           class="grid gap-x-20 grid-cols-2 pb-5 items-center justify-center max-sm:block max-sm:grid-rows-1 max-sm:grid-cols-1"
         >
           <div
-            class="flex items-center justify-end max-sm:justify-center max-sm:pl-5"
+            class="flex items-center justify-end max-sm:justify-center max-sm:px-[18vw] max-sm:pt-[18vw] max-sm:text-center"
           >
             <div>
               <h1
-                class="ml-[-4px] text-white pt-40 text-7xl font-extrabold max-sm:pt-32 max-sm:text-5xl"
+                class="ml-[-4px] text-white pt-40 text-7xl font-extrabold max-sm:pt-20 max-sm:text-[32px]"
               >
                 Brian Zenhom
               </h1>
               <h1
-                class="text-white text-5xl mt-0 tracking-[.020em] font-black max-sm:text-[32px]"
+                class="text-white text-5xl mt-0 tracking-[.020em] font-black max-sm:text-[21px]"
               >
                 <b
                   class="bg-gradient-to-r from-mainColor to-blue-300 text-transparent bg-clip-text font-black ml-[-2px]"
@@ -39,14 +39,14 @@ import Contactme from "../components/Contactme.astro";
                   FullStack</b
                 > Developer
               </h1>
-              <h2 class="text-white text-2xl pb-10 max-sm:text-lg">
+              <h2 class="text-white text-2xl pb-10 max-sm:text-base">
                 en <b>Vitoria-Gasteiz</b>, España.
               </h2>
 
-              <h2 class="text-white text-2xl max-sm:text-lg">
+              <h2 class="text-white text-2xl max-sm:text-base">
                 <b>9+</b> Years Graphic Designing.<br /><b>2+</b> Years Web Developing.
               </h2>
-              <p class="text-white text-base pt-8 max-sm:text-base">
+              <p class="text-white text-base pt-8 max-sm:text-xs">
                 Building my version of the web.
                 <br />Improving my skills through continuous learning.
               </p>
@@ -61,7 +61,7 @@ import Contactme from "../components/Contactme.astro";
               <img
                 height="600"
                 width="500"
-                class="object-cover z-50 bg-clip-border rounded-3xl max-sm:w-60"
+                class="object-cover z-50 bg-clip-border rounded-3xl max-sm:w-64"
                 src="/me4.webp"
                 alt="Brian Zenhom good face"
               />
@@ -255,5 +255,37 @@ import Contactme from "../components/Contactme.astro";
     -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.8), transparent 60%);
     mask-image: radial-gradient(rgba(0, 0, 0, 0.8), transparent 60%);
     z-index: -1;
+  }
+  @media screen and (max-width: 640px) {
+    .hero::before {
+      position: absolute;
+      content: "";
+      height: 90vw;
+      width: 100vw;
+      top: 20%;
+      translate: 0 -30%;
+      left: -60vw;
+      background: url(/noise.webp) repeat,
+        linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
+      background-blend-mode: overlay;
+      -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.4), transparent 65%);
+      mask-image: radial-gradient(rgba(0, 0, 0, 0.4), transparent 65%);
+      z-index: -1;
+    }
+    .hero::after {
+      position: absolute;
+      content: "";
+      height: 90vw;
+      width: 100vw;
+      top: 20%;
+      translate: 0 -30%;
+      right: -60vw;
+      background: url(/noise.webp) repeat,
+        linear-gradient(247.23deg, #d9d7ff 0%, #2f4cb3 100%);
+      background-blend-mode: overlay;
+      -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.5), transparent 65%);
+      mask-image: radial-gradient(rgba(0, 0, 0, 0.5), transparent 65%);
+      z-index: -1;
+    }
   }
 </style>
