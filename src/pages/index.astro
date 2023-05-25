@@ -14,9 +14,9 @@ import Contactme from "../pages/Contactme.astro";
   <div class="noise"></div>
   <main
     id="main"
-    class="relative noise-container w-full h-screen flex flex-1 flex-col overflow-x-hidden"
+    class="snap-y snap-mandatory relative noise-container w-full h-screen flex flex-1 flex-col overflow-x-hidden"
   >
-    <div id="intro">
+    <div class="snap-center" id="intro">
       <div class="hero pt-24 items-center h-screen flex flex-col max-sm:pt-0">
         <article
           class="grid gap-x-20 grid-cols-2 pb-5 items-center justify-center max-sm:block max-sm:grid-rows-1 max-sm:grid-cols-1"
@@ -103,16 +103,16 @@ import Contactme from "../pages/Contactme.astro";
       </div>
     </div>
 
-    <div id="projects">
+    <div class="snap-center" id="projects">
       <Projects />
     </div>
     <div id="aboutme">
       <Aboutme />
     </div>
-    <div id="experience">
+    <div class="snap-center" id="experience">
       <Experience />
     </div>
-    <div id="services">
+    <div class="snap-center" id="services">
       <Contactme />
     </div>
   </main>
