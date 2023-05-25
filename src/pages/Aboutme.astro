@@ -1,32 +1,43 @@
 ---
-import Arrowdown from "./Arrowdown.astro";
-import HtmlIcon from "./Html.astro";
-import CssIcon from "./Css.astro";
-import TailwindIcon from "./Tailwind.astro";
-import JavascriptIcon from "./JavascriptIcon.astro";
-import MongoDB from "./MongoDB.astro";
-import Photoshop from "./Photoshop.astro";
-import Illustrator from "./Illustrator.astro";
+import Arrowdown from "../components/Arrowdown.astro";
+import HtmlIcon from "../components/Html.astro";
+import CssIcon from "../components/Css.astro";
+import TailwindIcon from "../components/Tailwind.astro";
+import JavascriptIcon from "../components/JavascriptIcon.astro";
+import MongoDB from "../components/MongoDB.astro";
+import Photoshop from "../components/Photoshop.astro";
+import Illustrator from "../components/Illustrator.astro";
 ---
 
 <div
-  class="container snap-center pt-32 relative max-w-[1160px] h-screen mr-auto ml-auto max-sm:px-[18vw]"
+  class="container pt-32 relative max-w-[1160px] h-screen mr-auto ml-auto max-sm:px-[18vw]"
 >
-  <h2 class="text-white font-black text-2xl text-left max-sm:text-base">
-    About me
-  </h2>
-  <span class="text-white font-normal max-sm:text-xs"
-    >What you need to know</span
-  >
+  <div class="headtitles gap-24 flex">
+    <div class="title w-1/2">
+      <h2 class="text-white font-black text-2xl text-left max-sm:text-base">
+        About me
+      </h2>
+      <span class="text-white font-normal max-sm:text-xs"
+        >What you need to know</span
+      >
+    </div>
+    <div class="title2 w-1/2">
+      <h2
+        class="text-left text-white font-black text-2xl max-sm:text-base mb-0"
+      >
+        Tools
+      </h2>
+      <span class="text-white font-normal max-sm:text-xs">And Languages</span>
+    </div>
+  </div>
+
   <div
-    class="flex items-center justify-between flex-col md:flex-row gap-6 relative w-full"
+    class="flex gap-24 items-start justify-between flex-col md:flex-row w-full"
   >
     <div
-      class="flex items-center pt-10 md:w-1/2 w-full flex-col-reverse md:flex-col gap-10 max-sm:pt-2"
+      class="flex w-9-12 items-start pt-10 md:w-1/2 flex-col-reverse md:flex-col gap-10 max-sm:pt-2"
     >
-      <div
-        class="flex flex-col pt-5 gap-y-2 text-white text-base text-left max-sm:text-xs"
-      >
+      <div class="flex flex-col text-white text-base text-left max-sm:text-xs">
         <p class="mb-5 max-sm:mb-2">
           Experienced <span class="text-blue-600 font-bold"
             >graphic designer</span
@@ -84,20 +95,30 @@ import Illustrator from "./Illustrator.astro";
         </footer>
       </div>
     </div>
-  </div>
-  <div class="leading-3 mt-10">
-    <h2 class="text-left text-white font-black text-2xl max-sm:text-base mb-0">
-      Tools
-    </h2>
-    <span class="text-white font-normal max-sm:text-xs">And Languages</span>
-    <div class="flex h-10 mt-3 justify-between max-sm:gap-4">
-      <HtmlIcon />
-      <CssIcon />
-      <JavascriptIcon />
-      <TailwindIcon />
-      <MongoDB />
-      <Photoshop />
-      <Illustrator />
+    <div class="w-1/2 leading-3 mt-10">
+      <div class="grid grid-cols-3 gap-36 justify-center max-sm:gap-4">
+        <div class="w-[75px]">
+          <HtmlIcon />
+        </div>
+        <div class="w-[75px]">
+          <CssIcon />
+        </div>
+        <div class="w-[75px]">
+          <JavascriptIcon />
+        </div>
+        <div class="w-[75px]">
+          <TailwindIcon />
+        </div>
+        <div class="w-[75px]">
+          <MongoDB />
+        </div>
+        <div class="w-[75px]">
+          <Photoshop />
+        </div>
+        <div class="w-[75px]">
+          <Illustrator />
+        </div>
+      </div>
     </div>
   </div>
 </div>
