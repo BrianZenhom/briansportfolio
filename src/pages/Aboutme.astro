@@ -7,6 +7,8 @@ import JavascriptIcon from "../components/JavascriptIcon.astro";
 import MongoDB from "../components/MongoDB.astro";
 import Photoshop from "../components/Photoshop.astro";
 import Illustrator from "../components/Illustrator.astro";
+import React from "../components/React.astro";
+import Npm from "../components/Npm.astro";
 ---
 
 <div
@@ -25,9 +27,11 @@ import Illustrator from "../components/Illustrator.astro";
       <h2
         class="text-left text-white font-black text-2xl max-sm:text-base mb-0"
       >
-        Tools
+        Technologies
       </h2>
-      <span class="text-white font-normal max-sm:text-xs">And Languages</span>
+      <span class="text-white font-normal max-sm:text-xs"
+        >My backpack has these few</span
+      >
     </div>
   </div>
 
@@ -96,7 +100,9 @@ import Illustrator from "../components/Illustrator.astro";
       </div>
     </div>
     <div class="w-1/2 leading-3 mt-10">
-      <div class="grid grid-cols-3 gap-36 justify-center max-sm:gap-4">
+      <div
+        class="grid grid-cols-3 gap-x-36 gap-y-20 justify-center max-sm:gap-4"
+      >
         <div class="w-[75px]">
           <HtmlIcon />
         </div>
@@ -107,7 +113,13 @@ import Illustrator from "../components/Illustrator.astro";
           <JavascriptIcon />
         </div>
         <div class="w-[75px]">
+          <React />
+        </div>
+        <div class="w-[75px]">
           <TailwindIcon />
+        </div>
+        <div class="w-[75px]">
+          <Npm />
         </div>
         <div class="w-[75px]">
           <MongoDB />
