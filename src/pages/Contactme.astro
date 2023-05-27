@@ -2,46 +2,66 @@
 import Arrowdown from "../components/Arrowdown.astro";
 ---
 
+<div class="noise"></div>
 <div
-  class="container snap-center pt-32 relative max-w-[1160px] h-screen mr-auto ml-auto max-sm:px-[18vw] z-40"
+  class="contactme container pt-40 relative max-w-[1160px] h-screen mr-auto ml-auto max-sm:px-[18vw] z-40"
 >
-  <h2 class="text-white font-black text-2xl text-left max-sm:text-base">
-    Send me a message!
-  </h2>
-  <span class="text-white font-normal max-sm:text-xs"
-    >Got a question or proposal, or just want to say hello? Go ahead.</span
+  <div class="text-center mb-10">
+    <h2
+      class="text-white font-black text-2xl text-center max-sm:text-base mb-5"
+    >
+      Send me a message!
+    </h2>
+    <span class="text-white text-center font-normal max-sm:text-xs"
+      >Got a question or proposal, or just want to say hello? Go ahead.</span
+    >
+  </div>
+  <form
+    onsubmit="event.preventDefault(); validateForm();"
+    class="flex-col place-items-center justify-center h-5/6 pt-20 w-full mr-auto ml-auto"
   >
-  <div
-    class="grid grid-cols-2 gap-x-20 place-items-center justify-center h-5/6 w-full mr-auto ml-auto"
-  >
-    <div class="pt-10 w-full">
-      <div class="input-container">
-        <input placeholder="Enter your name" class="input-field" type="text" />
-        <label for="input-field" class="input-label">Your Name</label>
-        <span class="input-highlight"></span>
+    <div class="flex gap-x-20 mb-5">
+      <div class="pt-10 w-full">
+        <div class="input-container">
+          <input
+            required="required"
+            id="firstName"
+            placeholder="Enter your name"
+            class="input-field"
+            type="text"
+          />
+          <label for="input-field" class="input-label">Your Name</label>
+          <small class="error"></small>
+          <span class="input-highlight"></span>
+        </div>
       </div>
-    </div>
-    <div class="pt-10 w-full">
-      <div class="input-container">
-        <input
-          placeholder="Enter your email address"
-          class="input-field"
-          type="text"
-        />
-        <label for="input-field" class="input-label">Email Address</label>
-        <span class="input-highlight"></span>
+      <div class="pt-10 w-full">
+        <div class="input-container">
+          <input
+            required="required"
+            id="emailAddress"
+            placeholder="Enter your email address"
+            class="input-field"
+            type="text"
+          />
+          <label for="input-field" class="input-label">Email Address</label>
+          <small class="error"></small>
+          <span class="input-highlight"></span>
+        </div>
       </div>
     </div>
     <div class="pt-10 col-span-2 w-full">
       <div class="input-container">
         <textarea
+          id="messagePrivate"
           placeholder="Hi, I think we need a design system for our products at Company X. How soon can you hop on to discuss this?"
           class="input-field"
           name="message"
           required="required"
           rows="3"
           minlength="30"></textarea>
-        <label for="input-field" class="input-label">Your Message</label>
+        <label for="input-field" class="input-label">Your Message*</label>
+        <small class="error"></small>
         <span class="input-highlight"></span>
       </div>
     </div>
@@ -54,6 +74,8 @@ import Arrowdown from "../components/Arrowdown.astro";
           </div>
           <div></div>
           <button
+            type="submit"
+            value="Send Message"
             class="relative px-7 py-4 bg-bg-color rounded-lg leading-none flex items-center divide-x divide-gray-600"
           >
             <span class="flex items-center space-x-5">
@@ -80,8 +102,44 @@ import Arrowdown from "../components/Arrowdown.astro";
         </div>
       </div>
     </footer>
+    <script>
+      // get data
+      const nameInput = document.querySelector("#firstName");
+      const emailInput = document.querySelector("#emailAddress");
+      const message = document.querySelector("#messagePrivate");
 
+      // validate data
+      function validateForm() {
+        console.log("Hello");
+      }
+    </script>
     <style>
+      .contactme::after {
+        position: absolute;
+        content: "";
+        height: 50vw;
+        width: 100vw;
+        bottom: 0;
+        translate: -20% 70%;
+        background: url(/noise.webp) repeat,
+          linear-gradient(266.93deg, #2f4cb3 0%, #ff7d54 100%);
+        background-blend-mode: overlay;
+        -webkit-mask-image: radial-gradient(
+          rgba(0, 0, 0, 0.8),
+          transparent 60%
+        );
+        mask-image: radial-gradient(rgba(0, 0, 0, 0.8), transparent 60%);
+        z-index: -1;
+      }
+      .noise {
+        z-index: -20;
+        position: absolute;
+        inset: 0;
+        background-image: url(/noise.webp);
+        opacity: 0.4;
+        mix-blend-mode: overlay;
+        pointer-events: none;
+      }
       .form__group {
         position: relative;
         padding: 20px 0 0;
@@ -177,5 +235,5 @@ import Arrowdown from "../components/Arrowdown.astro";
         padding-left: 0 !important;
       }
     </style>
-  </div>
+  </form>
 </div>

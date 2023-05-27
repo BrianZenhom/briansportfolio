@@ -7,6 +7,7 @@ import Projects from "../pages/Projects.astro";
 import Experience from "../pages/Experience.astro";
 import Aboutme from "../pages/Aboutme.astro";
 import Contactme from "../pages/Contactme.astro";
+import Footer from "./Footer.astro";
 ---
 
 <Layout title="Brian Zenhom">
@@ -112,8 +113,9 @@ import Contactme from "../pages/Contactme.astro";
     <div class="snap-center" id="experience">
       <Experience />
     </div>
-    <div class="snap-center" id="contact">
+    <div class="snap-start" id="contact">
       <Contactme />
+      <Footer />
     </div>
   </main>
 </Layout>
