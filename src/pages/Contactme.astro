@@ -1,3 +1,7 @@
+---
+import Arrowdown from "../components/Arrowdown.astro";
+---
+
 <div
   class="container snap-center pt-32 relative max-w-[1160px] h-screen mr-auto ml-auto max-sm:px-[18vw] z-40"
 >
@@ -8,111 +12,171 @@
     >Got a question or proposal, or just want to say hello? Go ahead.</span
   >
   <div
-    class="grid grid-cols-2 gap-x-20 place-items-start pt-10 w-3/4 mr-auto ml-auto"
+    class="grid grid-cols-2 gap-x-20 place-items-center justify-center h-5/6 w-full mr-auto ml-auto"
   >
     <div class="pt-10 w-full">
-      <div class="form__group field">
-        <input type="text" class="form__field" placeholder="Name" required="" />
-        <label for="name" class="form__label">Name</label>
+      <div class="input-container">
+        <input placeholder="Enter your name" class="input-field" type="text" />
+        <label for="input-field" class="input-label">Your Name</label>
+        <span class="input-highlight"></span>
       </div>
     </div>
 
     <div class="pt-10 w-full">
-      <div class="form__group field">
+      <div class="input-container">
         <input
-          type="email"
-          class="form__field"
-          placeholder="email"
-          required=""
+          placeholder="Enter your email address"
+          class="input-field"
+          type="text"
         />
-        <label for="Email" class="form__label">Email</label>
+        <label for="input-field" class="input-label">Email Address</label>
+        <span class="input-highlight"></span>
       </div>
     </div>
     <div class="pt-10 col-span-2 w-full">
-      <div class="form__group field">
+      <div class="input-container">
         <textarea
-          class="form__field"
           placeholder="Hi, I think we need a design system for our products at Company X. How soon can you hop on to discuss this?"
+          class="input-field"
+          name="message"
           required="required"
           rows="3"
-          minlength="20"></textarea>
-        <label for="name" class="form__label">Message</label>
+          minlength="30"></textarea>
+        <label for="input-field" class="input-label">Your Message</label>
+        <span class="input-highlight"></span>
       </div>
     </div>
+    <footer class="z-30 pt-24 justify-center col-span-2 max-sm:pt-10">
+      <div class="grid gap-8 items-center justify-center">
+        <div class="relative group">
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-300 rounded-lg blur opacity-75 group-hover:opacity-100 ease-in-out transition duration-700 group-hover:duration-200 animate-tilt"
+          >
+          </div>
+          <div></div>
+          <button
+            class="relative px-7 py-4 bg-bg-color rounded-lg leading-none flex items-center divide-x divide-gray-600"
+          >
+            <span class="flex items-center space-x-5">
+              <span class="pr-6 text-gray-100 font-bold">Send</span>
+            </span>
+            <span
+              class="pl-6 text-gray-100 group-hover:text-gray-100 transition duration-200"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                ><path
+                  fill="none"
+                  stroke="#fff"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2.5"
+                  d="m5 12l-.604-5.437C4.223 5.007 5.825 3.864 7.24 4.535l11.944 5.658c1.525.722 1.525 2.892 0 3.614L7.24 19.465c-1.415.67-3.017-.472-2.844-2.028L5 12Zm0 0h7"
+                ></path></svg
+              ></span
+            >
+          </button>
+        </div>
+      </div>
+    </footer>
+
+    <style>
+      .form__group {
+        position: relative;
+        padding: 20px 0 0;
+        width: 100%;
+      }
+
+      .form__field {
+        font-family: inherit;
+        width: 100%;
+        border: none;
+        border-bottom: 2px solid #9b9b9b;
+        outline: 0;
+        font-size: 17px;
+        color: #2f4cb3;
+        padding: 7px 0;
+        background: transparent;
+        transition: border-color 0.2s;
+      }
+
+      .form__field::placeholder {
+        color: #9b9b9b;
+      }
+      textarea:focus::placeholder {
+        color: transparent;
+      }
+
+      /* Input container */
+      .input-container {
+        position: relative;
+      }
+
+      /* Input field */
+      .input-field {
+        display: block;
+        width: 100%;
+        padding-top: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        font-size: 16px;
+        border: none;
+        border-bottom: 2px solid #ccc;
+        outline: none;
+        background-color: transparent;
+      }
+
+      /* Input label */
+      .input-label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 16px;
+        color: rgba(204, 204, 204, 0);
+        pointer-events: none;
+        transition: all 0.3s ease;
+      }
+
+      /* Input highlight */
+      .input-highlight {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 0;
+        background-color: #007bff;
+        transition: all 0.3s ease;
+      }
+
+      /* Input field:focus styles */
+      .input-field:focus + .input-label {
+        top: -20px;
+        font-size: 16px;
+        color: #007bff;
+      }
+
+      .input-field:focus + .input-label + .input-highlight {
+        width: 100%;
+      }
+      input:focus::placeholder {
+        color: transparent;
+      }
+
+      .input-field[type="text"],
+      .input-field[type="email"] {
+        border: 1;
+        padding-left: 0;
+        position: relative;
+        color: #2f4cb3;
+      }
+      textarea {
+        color: #2f4cb3;
+      }
+      textarea::-webkit-input-placeholder {
+        padding-left: 0 !important;
+      }
+    </style>
   </div>
-
-  <style>
-    .form__group {
-      position: relative;
-      padding: 20px 0 0;
-      width: 100%;
-    }
-
-    .form__field {
-      font-family: inherit;
-      width: 100%;
-      border: none;
-      border-bottom: 2px solid #9b9b9b;
-      outline: 0;
-      font-size: 17px;
-      color: #2f4cb3;
-      padding: 7px 0;
-      background: transparent;
-      transition: border-color 0.2s;
-    }
-
-    .form__field::placeholder {
-      color: transparent;
-    }
-
-    .form__field:placeholder-shown ~ .form__label {
-      font-size: 17px;
-      cursor: text;
-      top: 20px;
-    }
-
-    .form__label {
-      position: absolute;
-      top: 0;
-      display: block;
-      transition: 0.2s;
-      font-size: 17px;
-      color: #9b9b9b;
-      pointer-events: none;
-    }
-
-    .form__field:focus {
-      padding-bottom: 6px;
-      font-weight: 700;
-      border-width: 3px;
-      border-image: linear-gradient(to right, #2f4cb3, #fff);
-      border-image-slice: 1;
-    }
-
-    .form__field:focus ~ .form__label {
-      position: absolute;
-      top: 0;
-      display: block;
-      transition: 0.2s;
-      font-size: 17px;
-      color: #2f4cb3;
-      font-weight: 700;
-    }
-
-    /* reset input */
-    .form__field:required,
-    .form__field:invalid {
-      box-shadow: none;
-    }
-    .form__field[type="text"],
-    .form__field[type="email"] {
-      border: 1;
-      padding-left: 0;
-      position: relative;
-      color: #2f4cb3;
-    }
-    .form__field textarea {
-      color: #2f4cb3;
-    }
-  </style>
 </div>
