@@ -1,5 +1,4 @@
 ---
-import Arrowdown from "../components/Arrowdown.astro";
 ---
 
 <div class="noise"></div>
@@ -17,7 +16,6 @@ import Arrowdown from "../components/Arrowdown.astro";
     >
   </div>
   <form
-    onsubmit="event.preventDefault(); validateForm();"
     class="flex-col place-items-center justify-center h-5/6 pt-20 w-full mr-auto ml-auto"
   >
     <div class="flex gap-x-20 mb-5">
@@ -26,13 +24,14 @@ import Arrowdown from "../components/Arrowdown.astro";
           <input
             required="required"
             id="firstName"
+            name="name"
             placeholder="Enter your name"
             class="input-field"
             type="text"
           />
           <label for="input-field" class="input-label">Your Name</label>
-          <small class="error"></small>
           <span class="input-highlight"></span>
+          <small class="error"></small>
         </div>
       </div>
       <div class="pt-10 w-full">
@@ -41,12 +40,13 @@ import Arrowdown from "../components/Arrowdown.astro";
             required="required"
             id="emailAddress"
             placeholder="Enter your email address"
+            name="email"
             class="input-field"
-            type="text"
+            type="email"
           />
           <label for="input-field" class="input-label">Email Address</label>
-          <small class="error"></small>
           <span class="input-highlight"></span>
+          <small class="error"></small>
         </div>
       </div>
     </div>
@@ -58,11 +58,10 @@ import Arrowdown from "../components/Arrowdown.astro";
           class="input-field"
           name="message"
           required="required"
-          rows="3"
-          minlength="30"></textarea>
-        <label for="input-field" class="input-label">Your Message</label>
-        <small class="error"></small>
+          rows="3"></textarea>
+        <label for="input-field" class="input-label">Your Message*</label>
         <span class="input-highlight"></span>
+        <small class="error"></small>
       </div>
     </div>
     <footer class="z-30 pt-24 justify-center col-span-2 max-sm:pt-10">
@@ -74,8 +73,7 @@ import Arrowdown from "../components/Arrowdown.astro";
           </div>
           <div></div>
           <button
-            type="submit"
-            value="Send Message"
+            id="submitBtn"
             class="relative px-7 py-4 bg-bg-color rounded-lg leading-none flex items-center divide-x divide-gray-600"
           >
             <span class="flex items-center space-x-5">
@@ -102,138 +100,140 @@ import Arrowdown from "../components/Arrowdown.astro";
         </div>
       </div>
     </footer>
-    <script>
-      // get data
-      const nameInput = document.querySelector("#firstName");
-      const emailInput = document.querySelector("#emailAddress");
-      const message = document.querySelector("#messagePrivate");
-
-      // validate data
-      function validateForm() {
-        console.log("Hello");
-      }
-    </script>
-    <style>
-      .contactme::after {
-        position: absolute;
-        content: "";
-        height: 50vw;
-        width: 100vw;
-        bottom: 0;
-        translate: -20% 70%;
-        background: url(/noise.webp) repeat,
-          linear-gradient(266.93deg, #2f4cb3 0%, #ff7d54 100%);
-        background-blend-mode: overlay;
-        -webkit-mask-image: radial-gradient(
-          rgba(0, 0, 0, 0.8),
-          transparent 60%
-        );
-        mask-image: radial-gradient(rgba(0, 0, 0, 0.8), transparent 60%);
-        z-index: -1;
-      }
-      .noise {
-        z-index: -20;
-        position: absolute;
-        inset: 0;
-        background-image: url(/noise.webp);
-        opacity: 0.4;
-        mix-blend-mode: overlay;
-        pointer-events: none;
-      }
-      .form__group {
-        position: relative;
-        padding: 20px 0 0;
-        width: 100%;
-      }
-
-      .form__field {
-        font-family: inherit;
-        width: 100%;
-        border: none;
-        border-bottom: 2px solid #9b9b9b;
-        outline: 0;
-        font-size: 17px;
-        color: #2f4cb3;
-        padding: 7px 0;
-        background: transparent;
-        transition: border-color 0.2s;
-      }
-
-      .form__field::placeholder {
-        color: #9b9b9b;
-      }
-      textarea:focus::placeholder {
-        color: transparent;
-      }
-
-      /* Input container */
-      .input-container {
-        position: relative;
-      }
-
-      /* Input field */
-      .input-field {
-        display: block;
-        width: 100%;
-        padding-top: 10px;
-        padding-right: 10px;
-        padding-bottom: 10px;
-        font-size: 16px;
-        border: none;
-        border-bottom: 2px solid #ccc;
-        outline: none;
-        background-color: transparent;
-      }
-
-      /* Input label */
-      .input-label {
-        position: absolute;
-        top: 0;
-        left: 0;
-        font-size: 16px;
-        color: rgba(204, 204, 204, 0);
-        pointer-events: none;
-        transition: all 0.3s ease;
-      }
-
-      /* Input highlight */
-      .input-highlight {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 2px;
-        width: 0;
-        background-color: #007bff;
-        transition: all 0.3s ease;
-      }
-
-      /* Input field:focus styles */
-      .input-field:focus + .input-label {
-        top: -20px;
-        font-size: 16px;
-        color: #007bff;
-      }
-
-      .input-field:focus + .input-label + .input-highlight {
-        width: 100%;
-      }
-      input:focus::placeholder {
-        color: transparent;
-      }
-
-      .input-field[type="text"],
-      .input-field[type="email"] {
-        border: 1;
-        padding-left: 0;
-        position: relative;
-        color: #2f4cb3;
-      }
-      textarea {
-        color: #2f4cb3;
-      }
-      textarea::-webkit-input-placeholder {
-        padding-left: 0 !important;
-      }
-    </style>
   </form>
 </div>
+
+<script>
+  const btn = document.querySelector("#submitBtn");
+  const message = (
+    document.getElementById("messagePrivate") as HTMLInputElement
+  ).value;
+
+  btn.addEventListener("click", function () {
+    console.log(message);
+  });
+</script>
+
+<style>
+  .contactme::after {
+    position: absolute;
+    content: "";
+    height: 50vw;
+    width: 100vw;
+    bottom: 0;
+    translate: -20% 70%;
+    background: url(/noise.webp) repeat,
+      linear-gradient(266.93deg, #2f4cb3 0%, #ff7d54 100%);
+    background-blend-mode: overlay;
+    -webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.8), transparent 60%);
+    mask-image: radial-gradient(rgba(0, 0, 0, 0.8), transparent 60%);
+    z-index: -1;
+  }
+  .noise {
+    z-index: -20;
+    position: absolute;
+    inset: 0;
+    background-image: url(/noise.webp);
+    opacity: 0.4;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+  }
+  .form__group {
+    position: relative;
+    padding: 20px 0 0;
+    width: 100%;
+  }
+
+  .form__field {
+    font-family: inherit;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 17px;
+    color: #2f4cb3;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+  }
+
+  .form__field::placeholder {
+    color: #9b9b9b;
+  }
+  textarea:focus::placeholder {
+    color: transparent;
+  }
+
+  /* Input container */
+  .input-container {
+    position: relative;
+  }
+
+  /* Input field */
+  .input-field {
+    display: block;
+    width: 100%;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    background-color: transparent;
+  }
+
+  /* Input label */
+  .input-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 16px;
+    color: rgba(204, 204, 204, 0);
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+
+  /* Input highlight */
+  .input-highlight {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: #007bff;
+    transition: all 0.3s ease;
+  }
+
+  /* Input field:focus styles */
+  .input-field:focus + .input-label {
+    top: -20px;
+    font-size: 16px;
+    color: #007bff;
+  }
+
+  .input-field:focus + .input-label + .input-highlight {
+    width: 100%;
+    font-weight: 700;
+    border-width: 1px;
+    border-image: linear-gradient(to right, #007bff, #fff);
+    border-image-slice: 1;
+  }
+  input:focus::placeholder {
+    color: transparent;
+  }
+
+  .input-field[type="text"],
+  .input-field[type="email"] {
+    border: 1;
+    padding-left: 0;
+    position: relative;
+    color: #2f4cb3;
+  }
+  textarea {
+    color: #2f4cb3;
+  }
+  textarea::-webkit-input-placeholder {
+    padding-left: 0 !important;
+  }
+</style>
