@@ -1,6 +1,29 @@
 ---
 ---
 
+<script>
+  // Inputs
+  const form = document.querySelector("#form");
+  const name = document.querySelector("#firstName") as HTMLInputElement;
+  const email = document.querySelector("#emailAddress") as HTMLInputElement;
+  const message = document.querySelector(
+    "#messagePrivate"
+  ) as HTMLTextAreaElement;
+  const errorElement = document.querySelector("#error") as HTMLElement;
+
+  // function and values
+  form.addEventListener("submit", (e) => {
+    let messages = [];
+    if (name.value === "" || name.value == null) {
+      messages.push("Name is required");
+    }
+    if (messages.length > 0) {
+      e.preventDefault();
+      errorElement.innerText = messages.join(", ");
+    }
+  });
+</script>
+
 <div class="noise"></div>
 <div
   class="contactme container pt-40 relative max-w-[1160px] h-screen mr-auto ml-auto max-sm:px-[18vw] z-40"
@@ -16,13 +39,13 @@
     >
   </div>
   <form
+    id="form"
     class="flex-col place-items-center justify-center h-5/6 pt-20 w-full mr-auto ml-auto"
   >
     <div class="flex gap-x-20 mb-5">
       <div class="pt-10 w-full">
         <div class="input-container">
           <input
-            required="required"
             id="firstName"
             name="name"
             placeholder="Enter your name"
@@ -31,13 +54,12 @@
           />
           <label for="input-field" class="input-label">Your Name</label>
           <span class="input-highlight"></span>
-          <small class="error"></small>
         </div>
+        <small id="error" class="text-red-600"></small>
       </div>
       <div class="pt-10 w-full">
         <div class="input-container">
           <input
-            required="required"
             id="emailAddress"
             placeholder="Enter your email address"
             name="email"
@@ -46,7 +68,7 @@
           />
           <label for="input-field" class="input-label">Email Address</label>
           <span class="input-highlight"></span>
-          <small class="error"></small>
+          <small id="error"></small>
         </div>
       </div>
     </div>
@@ -57,13 +79,12 @@
           placeholder="Hi, I think we need a design system for our products at Company X. How soon can you hop on to discuss this?"
           class="input-field"
           name="message"
-          required="required"
           rows="3"></textarea>
         <label for="input-field" class="input-label">Your Message*</label>
         <span class="input-highlight"></span>
-        <small class="error"></small>
       </div>
     </div>
+    <small id="error"></small>
     <footer class="z-30 pt-24 justify-center col-span-2 max-sm:pt-10">
       <div class="grid gap-8 items-center justify-center">
         <div class="relative group">
