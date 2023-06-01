@@ -11,7 +11,6 @@ import Footer from "./Footer.astro";
 
 <Layout title="Brian Zenhom">
   <Header class="top-0" />
-  <div class="noise"></div>
   <main
     id="main"
     class="snap-y snap-mandatory relative noise-container w-full h-screen flex flex-1 flex-col overflow-x-hidden"
@@ -119,9 +118,6 @@ import Footer from "./Footer.astro";
 </Layout>
 
 <style>
-  ::-webkit-scrollbar-track {
-    background: none;
-  }
   html {
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -289,5 +285,21 @@ import Footer from "./Footer.astro";
       mask-image: radial-gradient(rgba(0, 0, 0, 0.5), transparent 65%);
       z-index: -1;
     }
+  }
+  /* Page Design */
+  ::selection {
+    background: #17191e;
+    color: white;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    background: #2f4cb3;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #2f4cb3;
+    border-radius: 10px;
+    cursor: pointer;
   }
 </style>
